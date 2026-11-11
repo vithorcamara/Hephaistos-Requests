@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Postman</title>
+
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Mini Postman</h1>
+
+    <div class="form-group">
+      <label for="method">Método</label>
+
+      <select id="method">
+        <option>GET</option>
+        <option>POST</option>
+        <option>PUT</option>
+        <option>PATCH</option>
+        <option>DELETE</option>
+      </select>
+    </div>
+
+    <div class="form-group row">
+      <div>
+        <label for="base">Base URL</label>
+
+        <input
+          id="base"
+          placeholder="http://localhost"
+        >
+      </div>
+
+      <div>
+        <label for="port">Porta</label>
+
+        <input
+          id="port"
+          placeholder="3000"
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="endpoint">Endpoint</label>
+
+      <input
+        id="endpoint"
+        placeholder="/api/teste"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="headers">Headers (JSON)</label>
+
+      <textarea
+        id="headers"
+        rows="6"
+        placeholder='{
+  "Authorization": "Bearer token",
+  "X-API-Key": "123"
+}'
+      ></textarea>
+    </div>
+
+    <div
+      id="bodyContainer"
+      class="form-group"
+    >
+      <label for="body">Body (JSON)</label>
+
+      <textarea
+        id="body"
+        rows="10"
+        placeholder='{
+  "nome": "Vitor"
+}'
+      ></textarea>
+    </div>
+
+    <button onclick="enviar()">
+      Enviar
+    </button>
+
+    <hr>
+
+    <h3>
+      Status:
+      <span id="status">-</span>
+    </h3>
+
+    <h3>
+      Tempo:
+      <span id="time">-</span>
+    </h3>
+
+    <h3>Response Headers</h3>
+
+    <pre id="responseHeaders"></pre>
+
+    <h3>Response</h3>
+
+    <pre id="response"></pre>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
